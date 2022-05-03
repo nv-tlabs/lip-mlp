@@ -1,0 +1,10 @@
+@misc{https://doi.org/10.48550/arxiv.2202.08345,
+  doi = {10.48550/ARXIV.2202.08345},  
+  url = {https://arxiv.org/abs/2202.08345},  
+  author = {Liu, Hsueh-Ti Derek and Williams, Francis and Jacobson, Alec and Fidler, Sanja and Litany, Or},  
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), Graphics (cs.GR), FOS: Computer and information sciences, FOS: Computer and information sciences},  
+  title = {Learning Smooth Neural Functions via Lipschitz Regularization},  
+  publisher = {arXiv},  
+  year = {2022},  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
