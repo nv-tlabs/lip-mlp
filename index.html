@@ -312,9 +312,7 @@
                         <td width=600px>
                       <center>
                              <img src = "./resources/teaser.jpg" width="1050px"></img>
-                                                 <span style="font-size:15px;font-style:italic"> We fit neural networks to the signed distance field of a torus when the latent code 𝑡 = 0 and a double torus when 𝑡 = 1 (green).  Our Lipschitz multilayer
-                                                  perceptron (MLP) achieves smooth interpolation and extrapolation results (blue) when changing 𝑡, while the standard MLP fails (red).</span>
-
+                                                 <span style="font-size:15px;font-style:italic"> We fit neural networks to the signed distance field of a torus when the latent code t = 0 and a double torus when t = 1 (green).  Our Lipschitz multilayer perceptron (MLP) achieves smooth interpolation and extrapolation results (blue) when changing t, while the standard MLP fails (red).</span>
                     </center>
 
                     </td>
@@ -345,15 +343,43 @@
 
 <center><h1>Additional Results</h1></center>
 <table align=center width=900px>
-  <td width=600px>
+  <td width=500px>
 <center>
+  <img src = "./resources/testtime_qualitative.jpg" width="500px"></img>
+  <br><div style="font-size:15px;font-style:italic;max-width:630px;">
+    We present a method to encourage smooth solutions in a function parameterized by neural networks. This is important for geometric applications, such as reconstructing a shape from a partial point cloud. A non-smooth neural network may easily fall into bad local minima (top). A smoother neural network yields a better reconstruction (bottom).
+  </div>
+</center>
+<br><br><br>
+<center>
+  <img src = "./resources/occupancy_interp.jpg" width="1050px"></img>
+  <br><div style="font-size:15px;font-style:italic;max-width:1050;">
+    Our key idea is to use the Lipschitz bound as a metric for smoothness of a (continuous) neural field function. Unlike traditional measures (e.g., the norm of the Jacobian) which only encourage smoothness within the training set, our notion of smoothness is defined over the entire space. Thus, it encourages smooth interpolation and extrapolation even away from the training data at t = 0 and t = 1. 
+  </div>
+</center>
+<br><br><br>
+<center>
+  <img src = "./resources/manual_lipc_large.jpg" width="500px"></img>
+  <br><div style="font-size:15px;font-style:italic;max-width:600;">
+    With our notion of smoothness, we can encourage smooth solutions by penalizing the Lipschitz bound of a network. This boils down to adding a Lipschitz regularization to the loss function to automatically learn the Lipschitz constant that is suitable for a given task. Compared to other methods that pre-determine the constraints on the Lipschitz bounds, our method is far less sensitive to parameter tuning.
+  </div>
+</center>
+<br><br><br>
+<center>
+  <img src = "./resources/code.jpg" width="700px"></img>
+  <br><div style="font-size:15px;font-style:italic;max-width:700;">
+    Implementing our method is extremely simple. One only needs to make a few lines of changes to a standard MLP forward pass (see above). Jointly with the Lipschitz regularization, we can easily obtain a smooth neural network function. 
+  </div>
+</center>
+
+ 
+<!-- <center>
        <img src = "./resources/testtime_qualitative.jpg" width="750px"></img>
        <br><span style="font-size:15px;font-style:italic">Encouraging smoothness with respect to the change in latent code
               encourages the latent space to be more compact. In the application of test
               time optimization, our method yields a better reconstruction (blue) given
               partial observations (left). </span>
-
-</center>
+</center> -->
 
 </td>
    </tr>
